@@ -80,16 +80,20 @@ void setup()
 void loop() 
 {
   while(Serial.available())                   // While serial data are available we store it 
-  if(data=="f")                                  // If the stored data is forward movement
+  if(data=="a")                                  // If the stored data is forward movement
   {   step_forward(1);}
-  if(data=="p")                                  // If the stored data is backward movement
+  if(data=="b")                                  // If the stored data is backward movement
   {   step_back(1);}
 
-  if(data=="l")                                  // If the stored data is to turn left the car 
+  if(data=="d")                                  // If the stored data is to turn left the car 
   {   turn_left(1);  }
 
-  if(data=="m")                                  // If the stored data is to turn right the car
-  {   turn_right(5); }}
+  if(data=="c")                                  // If the stored data is to turn right the car
+  {   turn_right(5); }
+  
+  if(data=="e")                                  // If the stored data is to turn right the car
+  {   sit(); delay(3000); stand(); delay(3000); }
+  }
 void servo_attach(void)
 {
   for (int i = 0; i < 4; i++){
